@@ -1,5 +1,6 @@
 //Import the ORM config file
-const orm = ("../config/orm.js");
+const orm = require("../config/orm.js");
+console.log(orm);
 
 //Object containing all of the ORM methods to query the SQL database
 const burger = {
@@ -9,14 +10,14 @@ const burger = {
         });
     },
 
-    create: function(columns, values, cb){
-        orm.insertOne("burgers", columns, values, function(res){
+    create: function(column, value, cb){
+        orm.insertOne("burgers", [column], [value], function(res){
             cb(res);
         });
     },
 
-    update: function(columns, condition, cb){
-        orm.updateOne("burgers", columns, condition, function(res){
+    update: function(objColVal, condition, cb){
+        orm.updateOne("burgers", objColVal, condition, function(res){
             cb(res);
         });
     }

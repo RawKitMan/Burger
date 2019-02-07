@@ -1,4 +1,4 @@
-const connection = ("./connection.js");
+const connection = require("./connection.js");
 
 
 //questionMarks and objectToSQL are helper functions designed to help with creating the query string we need to access the SQL database. These functions also help prevent SQL injection.
@@ -29,7 +29,7 @@ function objectToSQL(obj) {
             };
         };
         //Push the created strings into the array
-        arr.push(key + "=" + value);
+        arr.push(key + " = " + value);
     };
 
     //Convert the array into a string and return it. This will be used for our UPDATE query/.

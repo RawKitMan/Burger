@@ -1,0 +1,26 @@
+
+<h2>BURGERS READY</h2> 
+
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+            {{> burgers/burgers-eaten devoured=false}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>BURGERS EATEN</h2> 
+
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            {{> burgers/burgers-eaten devoured=true}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+<form class = "make-da-burger">
+    <label for = "burger-input">Add a Burger:</label> 
+    <input type = "text" name = "new-burger" id = "burger-input" placeholder = "Enter burger here">
+    <input type = "submit" value = "Send the burger">
+</form>
