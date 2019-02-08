@@ -1,0 +1,9 @@
+
+li{
+    list-style: none;
+}
+
+.burger-image{
+    max-height: 40%;
+    max-width: 40%;
+}

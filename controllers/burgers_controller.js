@@ -1,9 +1,11 @@
+//Our controller requires access to Express's router function and the burger.js model in order to set up our API routing
 const express = require("express");
 const burger = require("../models/burger.js");
 
+//This is used to help with routing across multiple modules
 const router = express.Router();
 
-//Create the get, put, post, and delete routes (as needed) using "router.get" etc.
+//Create the get, put, and post request functions using "router.get" etc.
 
 router.get("/", function (req, res) {
 
@@ -35,12 +37,15 @@ router.put("/api/burgers/:id", function (req, res) {
     });
 });
 
+
+//Post request to add a new burger to the list using the create method in our burger model
 router.post("/api/burgers", function(req, res){
 
     burger.create("burger_name", req.body.burger_name, function(result){
+        //Show the id of the new burger
         res.json({id: result.insertId});
     });
 })
 
-
+//Exported to server.js so they can be used.
 module.exports = router;

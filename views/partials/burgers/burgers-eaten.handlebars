@@ -1,9 +1,9 @@
 <!--This HTML sets up the list of each burger from our data base and provides the appropriate button based on 
 if the burger is eaten or not-->
 
-<li>
+<li class = "mt-2">
     {{burger_name}}
-    <button class = "burger-button" data-id = "{{id}}" data-eaten = "{{devoured}}">
+    <button class = "burger-button btn btn-primary" data-id = "{{id}}" data-eaten = "{{devoured}}">
         {{#if devoured}}Make Another!{{else}}Eat Up!{{/if}}
     </button>
 </li>

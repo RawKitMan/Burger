@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title></title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/burgers.js"></script>
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<!--Additional styling-->
+	<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+	<title>Eatin' Burgers</title>
+
+	<!--jQuery CDN-->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+	<!--Client-side Javascript/jQuery to accept user input and manipulate the display/database-->
+	<script src="/assets/js/burgers.js"></script>
+</head>
+
+<body class="bg-dark">
+
+	<div class="text-center">
+		<img src="/assets/img/Burger.jpg" class = "burger-image" alt="Responsive Burger Image">
+	</div>
+	<!--index.html content will be imported here via Handlebars-->
+	{{{ body }}}
+</body>
+
 </html>

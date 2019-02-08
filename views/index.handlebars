@@ -1,26 +1,38 @@
+<div class="container-fluid mt-4">
 
-<h2>BURGERS READY</h2> 
+    <div class="row text-center">
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{> burgers/burgers-eaten devoured=false}}
-        {{/unless}}
-    {{/each}}
-</ul>
+        <div class="col-md-6">
+            <h2>BURGERS READY</h2>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burgers-eaten devoured=false}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
 
-<h2>BURGERS EATEN</h2> 
+        <div class="col-md-6">
+            <h2>BURGERS EATEN</h2>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burgers-eaten devoured=true}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            {{> burgers/burgers-eaten devoured=true}}
-        {{/if}}
-    {{/each}}
-</ul>
-
-<form class = "make-da-burger">
-    <label for = "burger-input">Add a Burger:</label> 
-    <input type = "text" name = "new-burger" id = "burger-input" placeholder = "Enter burger here">
-    <input type = "submit" value = "Send the burger">
-</form>
+    <div class="row mt-5 text-center">
+        <div class="offset-md-5 text-center form-group">
+            <form class="make-da-burger">
+                <label for="burger-input">Add a Burger:</label>
+                <input type="text" name="new-burger" id="burger-input" class="form-control"
+                    placeholder="Enter burger here">
+                <input type="submit" value="Send the burger" class="btn btn-danger mt-3">
+            </form>
+        </div>
+    </div>
+</div>
