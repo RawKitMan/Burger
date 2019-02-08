@@ -1,7 +1,9 @@
+//Import our database connection so we can use queries.
 const connection = require("./connection.js");
 
 
-//questionMarks and objectToSQL are helper functions designed to help with creating the query string we need to access the SQL database. These functions also help prevent SQL injection.
+/*questionMarks and objectToSQL are helper functions designed to help with creating the query string we need to access the SQL database. These functions also help prevent SQL injection. I did borrow these from another App because I like how it can be applied with queries
+using multiple columns and data values. This app is not as intensive but is still very useful*/
 function questionMarks(num) {
     //First we create an empty array to store the '?'s
     let arr = [];
